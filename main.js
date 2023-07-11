@@ -3,14 +3,24 @@ import "./style.css";
 const formSelector = document.querySelector("form");
 const bookListRef = document.getElementById("book-list");
 
+const localStorageBooks = JSON.parse(localStorage.getItem("books"));
+
 let bookList = [];
+
+if (localStorageBooks) {
+  bookList = localStorageBooks;
+}
 
 const addBook = (book) => {
   bookList = [...bookList, book];
+
+  localStorage.setItem("books", JSON.stringify(bookList));
 };
 
 const deleteBook = (isbn) => {
   bookList = bookList.filter((book) => book.isbn !== isbn);
+
+  localStorage.setItem("books", JSON.stringify(bookList));
 };
 
 const toast = (message) => {
