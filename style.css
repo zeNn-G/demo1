@@ -95,6 +95,12 @@ input {
   align-items: center;
 }
 
+.no-books {
+  margin-top: 1rem;
+}
+
+/* Toast */
+
 .toast {
   position: fixed;
   top: 1rem;

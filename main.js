@@ -55,6 +55,15 @@ formSelector.addEventListener("submit", (e) => {
 const displayBooks = () => {
   bookListRef.innerHTML = "";
 
+  if (bookList.length === 0) {
+    bookListRef.innerHTML = `
+        <div class="no-books">
+            <h2>No books to display</h2>
+        </div>
+    `;
+    return;
+  }
+
   bookList.forEach((book) => {
     const bookItem = document.createElement("tr");
 
