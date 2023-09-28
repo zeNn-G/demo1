@@ -23,6 +23,8 @@ const deleteBook = (isbn) => {
   localStorage.setItem("books", JSON.stringify(bookList));
 };
 
+console.log("t");
+
 const toast = (message) => {
   const toast = document.createElement("div");
   toast.classList.add("toast");
